@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- Задание 1: Изменение текста элемента -->
+    <p id="message">Привет, мир!</p>
+
+    <script>
+      let paragraph = document.getElementById("message");
+      paragraph.textContent = "Добро пожаловать в JavaScript!";
+    </script>
+
+    <!-- Задание 2: Работа с классами элементов -->
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+
+    <style>
+      .box {
+        width: 150px;
+        height: 150px;
+        background-color: blanchedalmond;
+        display: inline-block;
+      }
+    </style>
+    <script>
+      let box = document.getElementsByClassName("box");
+
+      for (let a = 0; a < box.length; a++) {
+        box[a].style.backgroundColor = "green";
+      }
+    </script>
+
+    <!-- Задание 3: Использование `querySelector` и `querySelectorAll` -->
+    <div class="box"></div>
+    <p id="text"></p>
+
+    <script>
+      let query = document.querySelector("#text");
+      query.textContent = "This is the first paragraph";
+
+      let query2 = document.querySelectorAll(".box");
+
+      query2.forEach((box) => {
+        box.style.backgroundColor = "blue";
+      });
+    </script>
+
+    <!-- Задание 4: Поиск и выделение элементов по классу -->
+    <p class="highlight">This is the first paragraph</p>
+    <p class="highlight">This is the second paragraph</p>
+    <p class="dontHighlight">This is the third paragraph</p>
+    <p class="highlight">this is the fourth paragraph</p>
+
+    <script>
+      let highlightedParagraphs = document.querySelectorAll(".highlight");
+
+      highlightedParagraphs.forEach((paragraph) => {
+        paragraph.style.color = "red";
+      });
+    </script>
+  </body>
+</html>
