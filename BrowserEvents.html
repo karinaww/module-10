@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- Задание 1: Простое событие через атрибут в HTML -->
+    <button onclick="alert('Кнопка нажата!')">Нажми на меня!</button>
+
+    <!-- Задание 2: Добавление обработчика через JavaScript -->
+    <button id="jsButton">Нажми меня</button>
+
+    <script>
+      const button = document.getElementById("jsButton");
+
+      button.addEventListener("click", () => {
+        console.log("Событие обработано через JS");
+      });
+    </script>
+
+    <!-- Задание 3: Множественные события на одном элементе -->
+    <div id="myDiv"></div>
+    <style>
+      #myDiv {
+        width: 200px;
+        height: 200px;
+        background-color: blueviolet;
+        margin: 40px 0;
+      }
+    </style>
+
+    <script>
+      const mydiv = document.getElementById("myDiv");
+
+      mydiv.addEventListener("click", () => {
+        mydiv.style.backgroundColor = "blue";
+      });
+
+      mydiv.addEventListener("mouseenter", () => {
+        console.log("Элемент нажат");
+      });
+    </script>
+
+    <!-- Задание 4: Работа с объектом события `event` -->
+    <input type="text" id="textInput" />
+    <script>
+      const input = document.getElementById("textInput");
+      input.addEventListener("keydown", (event) => {
+        console.log("Введено: ", event.key);
+      });
+    </script>
+
+    <!-- Задание 5: Отмена действия по умолчанию -->
+    <a href="https://example.com" id="myLink">Перейти на сайт</a>
+
+    <script>
+      const mylink = document.getElementById("myLink");
+      mylink.addEventListener("click", (event) => {
+        event.preventDefault();
+        console.log("Переход по ссылке отменен");
+      });
+    </script>
+
+    <!-- Задание 6: Делегирование событий -->
+    <ul id="list">
+      <li>one</li>
+      <li>two</li>
+      <li>three</li>
+    </ul>
+
+    <script>
+      const myList = document.getElementById("list");
+
+      myList.addEventListener("click", (event) => {
+        console.log("Кликнули на: ", event.target.textContent);
+      });
+    </script>
+
+    <!-- Задание 7: События клавиатуры -->
+    <input type="text" id="keyboardInput" />
+
+    <script>
+      const myInput = document.getElementById("keyboardInput");
+      myInput.addEventListener("keydown", (event) => {
+        console.log("Код нажатой клавиши: ", event.code);
+      });
+    </script>
+  </body>
+</html>
